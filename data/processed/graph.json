@@ -1,0 +1,449 @@
+{
+  "metadata": {
+    "repository_path": "D:\\DepViz\\data\\raw\\fastapi\\fastapi",
+    "python_file_count": 52,
+    "node_count": 52,
+    "edge_count": 25
+  },
+  "nodes": [
+    {
+      "id": "applications.py",
+      "path": "applications.py",
+      "filename": "applications.py",
+      "folder": ""
+    },
+    {
+      "id": "background.py",
+      "path": "background.py",
+      "filename": "background.py",
+      "folder": ""
+    },
+    {
+      "id": "cli.py",
+      "path": "cli.py",
+      "filename": "cli.py",
+      "folder": ""
+    },
+    {
+      "id": "concurrency.py",
+      "path": "concurrency.py",
+      "filename": "concurrency.py",
+      "folder": ""
+    },
+    {
+      "id": "datastructures.py",
+      "path": "datastructures.py",
+      "filename": "datastructures.py",
+      "folder": ""
+    },
+    {
+      "id": "encoders.py",
+      "path": "encoders.py",
+      "filename": "encoders.py",
+      "folder": ""
+    },
+    {
+      "id": "exceptions.py",
+      "path": "exceptions.py",
+      "filename": "exceptions.py",
+      "folder": ""
+    },
+    {
+      "id": "exception_handlers.py",
+      "path": "exception_handlers.py",
+      "filename": "exception_handlers.py",
+      "folder": ""
+    },
+    {
+      "id": "logger.py",
+      "path": "logger.py",
+      "filename": "logger.py",
+      "folder": ""
+    },
+    {
+      "id": "params.py",
+      "path": "params.py",
+      "filename": "params.py",
+      "folder": ""
+    },
+    {
+      "id": "param_functions.py",
+      "path": "param_functions.py",
+      "filename": "param_functions.py",
+      "folder": ""
+    },
+    {
+      "id": "requests.py",
+      "path": "requests.py",
+      "filename": "requests.py",
+      "folder": ""
+    },
+    {
+      "id": "responses.py",
+      "path": "responses.py",
+      "filename": "responses.py",
+      "folder": ""
+    },
+    {
+      "id": "routing.py",
+      "path": "routing.py",
+      "filename": "routing.py",
+      "folder": ""
+    },
+    {
+      "id": "sse.py",
+      "path": "sse.py",
+      "filename": "sse.py",
+      "folder": ""
+    },
+    {
+      "id": "staticfiles.py",
+      "path": "staticfiles.py",
+      "filename": "staticfiles.py",
+      "folder": ""
+    },
+    {
+      "id": "templating.py",
+      "path": "templating.py",
+      "filename": "templating.py",
+      "folder": ""
+    },
+    {
+      "id": "testclient.py",
+      "path": "testclient.py",
+      "filename": "testclient.py",
+      "folder": ""
+    },
+    {
+      "id": "types.py",
+      "path": "types.py",
+      "filename": "types.py",
+      "folder": ""
+    },
+    {
+      "id": "utils.py",
+      "path": "utils.py",
+      "filename": "utils.py",
+      "folder": ""
+    },
+    {
+      "id": "websockets.py",
+      "path": "websockets.py",
+      "filename": "websockets.py",
+      "folder": ""
+    },
+    {
+      "id": "__init__.py",
+      "path": "__init__.py",
+      "filename": "__init__.py",
+      "folder": ""
+    },
+    {
+      "id": "__main__.py",
+      "path": "__main__.py",
+      "filename": "__main__.py",
+      "folder": ""
+    },
+    {
+      "id": "dependencies/models.py",
+      "path": "dependencies/models.py",
+      "filename": "models.py",
+      "folder": "dependencies"
+    },
+    {
+      "id": "dependencies/utils.py",
+      "path": "dependencies/utils.py",
+      "filename": "utils.py",
+      "folder": "dependencies"
+    },
+    {
+      "id": "dependencies/__init__.py",
+      "path": "dependencies/__init__.py",
+      "filename": "__init__.py",
+      "folder": "dependencies"
+    },
+    {
+      "id": "middleware/asyncexitstack.py",
+      "path": "middleware/asyncexitstack.py",
+      "filename": "asyncexitstack.py",
+      "folder": "middleware"
+    },
+    {
+      "id": "middleware/cors.py",
+      "path": "middleware/cors.py",
+      "filename": "cors.py",
+      "folder": "middleware"
+    },
+    {
+      "id": "middleware/gzip.py",
+      "path": "middleware/gzip.py",
+      "filename": "gzip.py",
+      "folder": "middleware"
+    },
+    {
+      "id": "middleware/httpsredirect.py",
+      "path": "middleware/httpsredirect.py",
+      "filename": "httpsredirect.py",
+      "folder": "middleware"
+    },
+    {
+      "id": "middleware/trustedhost.py",
+      "path": "middleware/trustedhost.py",
+      "filename": "trustedhost.py",
+      "folder": "middleware"
+    },
+    {
+      "id": "middleware/wsgi.py",
+      "path": "middleware/wsgi.py",
+      "filename": "wsgi.py",
+      "folder": "middleware"
+    },
+    {
+      "id": "middleware/__init__.py",
+      "path": "middleware/__init__.py",
+      "filename": "__init__.py",
+      "folder": "middleware"
+    },
+    {
+      "id": "openapi/constants.py",
+      "path": "openapi/constants.py",
+      "filename": "constants.py",
+      "folder": "openapi"
+    },
+    {
+      "id": "openapi/docs.py",
+      "path": "openapi/docs.py",
+      "filename": "docs.py",
+      "folder": "openapi"
+    },
+    {
+      "id": "openapi/models.py",
+      "path": "openapi/models.py",
+      "filename": "models.py",
+      "folder": "openapi"
+    },
+    {
+      "id": "openapi/utils.py",
+      "path": "openapi/utils.py",
+      "filename": "utils.py",
+      "folder": "openapi"
+    },
+    {
+      "id": "openapi/__init__.py",
+      "path": "openapi/__init__.py",
+      "filename": "__init__.py",
+      "folder": "openapi"
+    },
+    {
+      "id": "security/api_key.py",
+      "path": "security/api_key.py",
+      "filename": "api_key.py",
+      "folder": "security"
+    },
+    {
+      "id": "security/base.py",
+      "path": "security/base.py",
+      "filename": "base.py",
+      "folder": "security"
+    },
+    {
+      "id": "security/http.py",
+      "path": "security/http.py",
+      "filename": "http.py",
+      "folder": "security"
+    },
+    {
+      "id": "security/oauth2.py",
+      "path": "security/oauth2.py",
+      "filename": "oauth2.py",
+      "folder": "security"
+    },
+    {
+      "id": "security/open_id_connect_url.py",
+      "path": "security/open_id_connect_url.py",
+      "filename": "open_id_connect_url.py",
+      "folder": "security"
+    },
+    {
+      "id": "security/utils.py",
+      "path": "security/utils.py",
+      "filename": "utils.py",
+      "folder": "security"
+    },
+    {
+      "id": "security/__init__.py",
+      "path": "security/__init__.py",
+      "filename": "__init__.py",
+      "folder": "security"
+    },
+    {
+      "id": "telemetry/_api.py",
+      "path": "telemetry/_api.py",
+      "filename": "_api.py",
+      "folder": "telemetry"
+    },
+    {
+      "id": "telemetry/_asgi.py",
+      "path": "telemetry/_asgi.py",
+      "filename": "_asgi.py",
+      "folder": "telemetry"
+    },
+    {
+      "id": "telemetry/_runtime.py",
+      "path": "telemetry/_runtime.py",
+      "filename": "_runtime.py",
+      "folder": "telemetry"
+    },
+    {
+      "id": "telemetry/__init__.py",
+      "path": "telemetry/__init__.py",
+      "filename": "__init__.py",
+      "folder": "telemetry"
+    },
+    {
+      "id": "_compat/shared.py",
+      "path": "_compat/shared.py",
+      "filename": "shared.py",
+      "folder": "_compat"
+    },
+    {
+      "id": "_compat/v2.py",
+      "path": "_compat/v2.py",
+      "filename": "v2.py",
+      "folder": "_compat"
+    },
+    {
+      "id": "_compat/__init__.py",
+      "path": "_compat/__init__.py",
+      "filename": "__init__.py",
+      "folder": "_compat"
+    }
+  ],
+  "edges": [
+    {
+      "source": "datastructures.py",
+      "target": "_compat/v2.py",
+      "import_count": 1
+    },
+    {
+      "source": "encoders.py",
+      "target": "types.py",
+      "import_count": 1
+    },
+    {
+      "source": "encoders.py",
+      "target": "_compat/__init__.py",
+      "import_count": 2
+    },
+    {
+      "source": "params.py",
+      "target": "_compat/__init__.py",
+      "import_count": 1
+    },
+    {
+      "source": "params.py",
+      "target": "datastructures.py",
+      "import_count": 1
+    },
+    {
+      "source": "routing.py",
+      "target": "types.py",
+      "import_count": 1
+    },
+    {
+      "source": "utils.py",
+      "target": "_compat/__init__.py",
+      "import_count": 1
+    },
+    {
+      "source": "utils.py",
+      "target": "routing.py",
+      "import_count": 1
+    },
+    {
+      "source": "__init__.py",
+      "target": "applications.py",
+      "import_count": 1
+    },
+    {
+      "source": "__init__.py",
+      "target": "background.py",
+      "import_count": 1
+    },
+    {
+      "source": "__init__.py",
+      "target": "datastructures.py",
+      "import_count": 1
+    },
+    {
+      "source": "__init__.py",
+      "target": "exceptions.py",
+      "import_count": 2
+    },
+    {
+      "source": "__init__.py",
+      "target": "param_functions.py",
+      "import_count": 9
+    },
+    {
+      "source": "__init__.py",
+      "target": "requests.py",
+      "import_count": 1
+    },
+    {
+      "source": "__init__.py",
+      "target": "responses.py",
+      "import_count": 1
+    },
+    {
+      "source": "__init__.py",
+      "target": "routing.py",
+      "import_count": 1
+    },
+    {
+      "source": "__init__.py",
+      "target": "websockets.py",
+      "import_count": 2
+    },
+    {
+      "source": "security/__init__.py",
+      "target": "security/api_key.py",
+      "import_count": 3
+    },
+    {
+      "source": "security/__init__.py",
+      "target": "security/http.py",
+      "import_count": 5
+    },
+    {
+      "source": "security/__init__.py",
+      "target": "security/oauth2.py",
+      "import_count": 6
+    },
+    {
+      "source": "security/__init__.py",
+      "target": "security/open_id_connect_url.py",
+      "import_count": 1
+    },
+    {
+      "source": "telemetry/__init__.py",
+      "target": "telemetry/_api.py",
+      "import_count": 3
+    },
+    {
+      "source": "_compat/shared.py",
+      "target": "types.py",
+      "import_count": 1
+    },
+    {
+      "source": "_compat/__init__.py",
+      "target": "_compat/shared.py",
+      "import_count": 13
+    },
+    {
+      "source": "_compat/__init__.py",
+      "target": "_compat/v2.py",
+      "import_count": 17
+    }
+  ]
+}

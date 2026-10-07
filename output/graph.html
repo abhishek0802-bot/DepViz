@@ -1,0 +1,204 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 850px;
+                 background-color: #1e1e1e;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "applications.py", "label": "applications.py", "shape": "dot", "size": 20, "title": "filename: applications.py\npath: applications.py\nfolder: (root)\nin-degree: 1\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "background.py", "label": "background.py", "shape": "dot", "size": 20, "title": "filename: background.py\npath: background.py\nfolder: (root)\nin-degree: 1\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "cli.py", "label": "cli.py", "shape": "dot", "size": 8, "title": "filename: cli.py\npath: cli.py\nfolder: (root)\nin-degree: 0\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "concurrency.py", "label": "concurrency.py", "shape": "dot", "size": 8, "title": "filename: concurrency.py\npath: concurrency.py\nfolder: (root)\nin-degree: 0\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "datastructures.py", "label": "datastructures.py", "shape": "dot", "size": 26, "title": "filename: datastructures.py\npath: datastructures.py\nfolder: (root)\nin-degree: 2\nout-degree: 1"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "encoders.py", "label": "encoders.py", "shape": "dot", "size": 8, "title": "filename: encoders.py\npath: encoders.py\nfolder: (root)\nin-degree: 0\nout-degree: 2"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "exceptions.py", "label": "exceptions.py", "shape": "dot", "size": 20, "title": "filename: exceptions.py\npath: exceptions.py\nfolder: (root)\nin-degree: 1\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "exception_handlers.py", "label": "exception_handlers.py", "shape": "dot", "size": 8, "title": "filename: exception_handlers.py\npath: exception_handlers.py\nfolder: (root)\nin-degree: 0\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "logger.py", "label": "logger.py", "shape": "dot", "size": 8, "title": "filename: logger.py\npath: logger.py\nfolder: (root)\nin-degree: 0\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "params.py", "label": "params.py", "shape": "dot", "size": 8, "title": "filename: params.py\npath: params.py\nfolder: (root)\nin-degree: 0\nout-degree: 2"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "param_functions.py", "label": "param_functions.py", "shape": "dot", "size": 20, "title": "filename: param_functions.py\npath: param_functions.py\nfolder: (root)\nin-degree: 1\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "requests.py", "label": "requests.py", "shape": "dot", "size": 20, "title": "filename: requests.py\npath: requests.py\nfolder: (root)\nin-degree: 1\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "responses.py", "label": "responses.py", "shape": "dot", "size": 20, "title": "filename: responses.py\npath: responses.py\nfolder: (root)\nin-degree: 1\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "routing.py", "label": "routing.py", "shape": "dot", "size": 26, "title": "filename: routing.py\npath: routing.py\nfolder: (root)\nin-degree: 2\nout-degree: 1"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "sse.py", "label": "sse.py", "shape": "dot", "size": 8, "title": "filename: sse.py\npath: sse.py\nfolder: (root)\nin-degree: 0\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "staticfiles.py", "label": "staticfiles.py", "shape": "dot", "size": 8, "title": "filename: staticfiles.py\npath: staticfiles.py\nfolder: (root)\nin-degree: 0\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "templating.py", "label": "templating.py", "shape": "dot", "size": 8, "title": "filename: templating.py\npath: templating.py\nfolder: (root)\nin-degree: 0\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "testclient.py", "label": "testclient.py", "shape": "dot", "size": 8, "title": "filename: testclient.py\npath: testclient.py\nfolder: (root)\nin-degree: 0\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "types.py", "label": "types.py", "shape": "dot", "size": 32, "title": "filename: types.py\npath: types.py\nfolder: (root)\nin-degree: 3\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "utils.py", "label": "utils.py", "shape": "dot", "size": 8, "title": "filename: utils.py\npath: utils.py\nfolder: (root)\nin-degree: 0\nout-degree: 2"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "websockets.py", "label": "websockets.py", "shape": "dot", "size": 20, "title": "filename: websockets.py\npath: websockets.py\nfolder: (root)\nin-degree: 1\nout-degree: 0"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "__init__.py", "label": "__init__.py", "shape": "dot", "size": 8, "title": "filename: __init__.py\npath: __init__.py\nfolder: (root)\nin-degree: 0\nout-degree: 9"}, {"color": "#f032e6", "font": {"color": "#f0f0f0"}, "id": "__main__.py", "label": "__main__.py", "shape": "dot", "size": 8, "title": "filename: __main__.py\npath: __main__.py\nfolder: (root)\nin-degree: 0\nout-degree: 0"}, {"color": "#f58231", "font": {"color": "#f0f0f0"}, "id": "dependencies/models.py", "label": "models.py", "shape": "dot", "size": 8, "title": "filename: models.py\npath: dependencies/models.py\nfolder: dependencies\nin-degree: 0\nout-degree: 0"}, {"color": "#f58231", "font": {"color": "#f0f0f0"}, "id": "dependencies/utils.py", "label": "utils.py", "shape": "dot", "size": 8, "title": "filename: utils.py\npath: dependencies/utils.py\nfolder: dependencies\nin-degree: 0\nout-degree: 0"}, {"color": "#f58231", "font": {"color": "#f0f0f0"}, "id": "dependencies/__init__.py", "label": "__init__.py", "shape": "dot", "size": 8, "title": "filename: __init__.py\npath: dependencies/__init__.py\nfolder: dependencies\nin-degree: 0\nout-degree: 0"}, {"color": "#aaffc3", "font": {"color": "#f0f0f0"}, "id": "middleware/asyncexitstack.py", "label": "asyncexitstack.py", "shape": "dot", "size": 8, "title": "filename: asyncexitstack.py\npath: middleware/asyncexitstack.py\nfolder: middleware\nin-degree: 0\nout-degree: 0"}, {"color": "#aaffc3", "font": {"color": "#f0f0f0"}, "id": "middleware/cors.py", "label": "cors.py", "shape": "dot", "size": 8, "title": "filename: cors.py\npath: middleware/cors.py\nfolder: middleware\nin-degree: 0\nout-degree: 0"}, {"color": "#aaffc3", "font": {"color": "#f0f0f0"}, "id": "middleware/gzip.py", "label": "gzip.py", "shape": "dot", "size": 8, "title": "filename: gzip.py\npath: middleware/gzip.py\nfolder: middleware\nin-degree: 0\nout-degree: 0"}, {"color": "#aaffc3", "font": {"color": "#f0f0f0"}, "id": "middleware/httpsredirect.py", "label": "httpsredirect.py", "shape": "dot", "size": 8, "title": "filename: httpsredirect.py\npath: middleware/httpsredirect.py\nfolder: middleware\nin-degree: 0\nout-degree: 0"}, {"color": "#aaffc3", "font": {"color": "#f0f0f0"}, "id": "middleware/trustedhost.py", "label": "trustedhost.py", "shape": "dot", "size": 8, "title": "filename: trustedhost.py\npath: middleware/trustedhost.py\nfolder: middleware\nin-degree: 0\nout-degree: 0"}, {"color": "#aaffc3", "font": {"color": "#f0f0f0"}, "id": "middleware/wsgi.py", "label": "wsgi.py", "shape": "dot", "size": 8, "title": "filename: wsgi.py\npath: middleware/wsgi.py\nfolder: middleware\nin-degree: 0\nout-degree: 0"}, {"color": "#aaffc3", "font": {"color": "#f0f0f0"}, "id": "middleware/__init__.py", "label": "__init__.py", "shape": "dot", "size": 8, "title": "filename: __init__.py\npath: middleware/__init__.py\nfolder: middleware\nin-degree: 0\nout-degree: 0"}, {"color": "#4363d8", "font": {"color": "#f0f0f0"}, "id": "openapi/constants.py", "label": "constants.py", "shape": "dot", "size": 8, "title": "filename: constants.py\npath: openapi/constants.py\nfolder: openapi\nin-degree: 0\nout-degree: 0"}, {"color": "#4363d8", "font": {"color": "#f0f0f0"}, "id": "openapi/docs.py", "label": "docs.py", "shape": "dot", "size": 8, "title": "filename: docs.py\npath: openapi/docs.py\nfolder: openapi\nin-degree: 0\nout-degree: 0"}, {"color": "#4363d8", "font": {"color": "#f0f0f0"}, "id": "openapi/models.py", "label": "models.py", "shape": "dot", "size": 8, "title": "filename: models.py\npath: openapi/models.py\nfolder: openapi\nin-degree: 0\nout-degree: 0"}, {"color": "#4363d8", "font": {"color": "#f0f0f0"}, "id": "openapi/utils.py", "label": "utils.py", "shape": "dot", "size": 8, "title": "filename: utils.py\npath: openapi/utils.py\nfolder: openapi\nin-degree: 0\nout-degree: 0"}, {"color": "#4363d8", "font": {"color": "#f0f0f0"}, "id": "openapi/__init__.py", "label": "__init__.py", "shape": "dot", "size": 8, "title": "filename: __init__.py\npath: openapi/__init__.py\nfolder: openapi\nin-degree: 0\nout-degree: 0"}, {"color": "#f58231", "font": {"color": "#f0f0f0"}, "id": "security/api_key.py", "label": "api_key.py", "shape": "dot", "size": 20, "title": "filename: api_key.py\npath: security/api_key.py\nfolder: security\nin-degree: 1\nout-degree: 0"}, {"color": "#f58231", "font": {"color": "#f0f0f0"}, "id": "security/base.py", "label": "base.py", "shape": "dot", "size": 8, "title": "filename: base.py\npath: security/base.py\nfolder: security\nin-degree: 0\nout-degree: 0"}, {"color": "#f58231", "font": {"color": "#f0f0f0"}, "id": "security/http.py", "label": "http.py", "shape": "dot", "size": 20, "title": "filename: http.py\npath: security/http.py\nfolder: security\nin-degree: 1\nout-degree: 0"}, {"color": "#f58231", "font": {"color": "#f0f0f0"}, "id": "security/oauth2.py", "label": "oauth2.py", "shape": "dot", "size": 20, "title": "filename: oauth2.py\npath: security/oauth2.py\nfolder: security\nin-degree: 1\nout-degree: 0"}, {"color": "#f58231", "font": {"color": "#f0f0f0"}, "id": "security/open_id_connect_url.py", "label": "open_id_connect_url.py", "shape": "dot", "size": 20, "title": "filename: open_id_connect_url.py\npath: security/open_id_connect_url.py\nfolder: security\nin-degree: 1\nout-degree: 0"}, {"color": "#f58231", "font": {"color": "#f0f0f0"}, "id": "security/utils.py", "label": "utils.py", "shape": "dot", "size": 8, "title": "filename: utils.py\npath: security/utils.py\nfolder: security\nin-degree: 0\nout-degree: 0"}, {"color": "#f58231", "font": {"color": "#f0f0f0"}, "id": "security/__init__.py", "label": "__init__.py", "shape": "dot", "size": 8, "title": "filename: __init__.py\npath: security/__init__.py\nfolder: security\nin-degree: 0\nout-degree: 4"}, {"color": "#9a6324", "font": {"color": "#f0f0f0"}, "id": "telemetry/_api.py", "label": "_api.py", "shape": "dot", "size": 20, "title": "filename: _api.py\npath: telemetry/_api.py\nfolder: telemetry\nin-degree: 1\nout-degree: 0"}, {"color": "#9a6324", "font": {"color": "#f0f0f0"}, "id": "telemetry/_asgi.py", "label": "_asgi.py", "shape": "dot", "size": 8, "title": "filename: _asgi.py\npath: telemetry/_asgi.py\nfolder: telemetry\nin-degree: 0\nout-degree: 0"}, {"color": "#9a6324", "font": {"color": "#f0f0f0"}, "id": "telemetry/_runtime.py", "label": "_runtime.py", "shape": "dot", "size": 8, "title": "filename: _runtime.py\npath: telemetry/_runtime.py\nfolder: telemetry\nin-degree: 0\nout-degree: 0"}, {"color": "#9a6324", "font": {"color": "#f0f0f0"}, "id": "telemetry/__init__.py", "label": "__init__.py", "shape": "dot", "size": 8, "title": "filename: __init__.py\npath: telemetry/__init__.py\nfolder: telemetry\nin-degree: 0\nout-degree: 1"}, {"color": "#911eb4", "font": {"color": "#f0f0f0"}, "id": "_compat/shared.py", "label": "shared.py", "shape": "dot", "size": 20, "title": "filename: shared.py\npath: _compat/shared.py\nfolder: _compat\nin-degree: 1\nout-degree: 1"}, {"color": "#911eb4", "font": {"color": "#f0f0f0"}, "id": "_compat/v2.py", "label": "v2.py", "shape": "dot", "size": 26, "title": "filename: v2.py\npath: _compat/v2.py\nfolder: _compat\nin-degree: 2\nout-degree: 0"}, {"color": "#911eb4", "font": {"color": "#f0f0f0"}, "id": "_compat/__init__.py", "label": "__init__.py", "shape": "dot", "size": 32, "title": "filename: __init__.py\npath: _compat/__init__.py\nfolder: _compat\nin-degree: 3\nout-degree: 2"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "datastructures.py", "title": "import_count: 1", "to": "_compat/v2.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "encoders.py", "title": "import_count: 1", "to": "types.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "encoders.py", "title": "import_count: 2", "to": "_compat/__init__.py", "width": 4.0}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "params.py", "title": "import_count: 1", "to": "_compat/__init__.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "params.py", "title": "import_count: 1", "to": "datastructures.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "routing.py", "title": "import_count: 1", "to": "types.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "utils.py", "title": "import_count: 1", "to": "_compat/__init__.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "utils.py", "title": "import_count: 1", "to": "routing.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "__init__.py", "title": "import_count: 1", "to": "applications.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "__init__.py", "title": "import_count: 1", "to": "background.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "__init__.py", "title": "import_count: 1", "to": "datastructures.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "__init__.py", "title": "import_count: 2", "to": "exceptions.py", "width": 4.0}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "__init__.py", "title": "import_count: 9", "to": "param_functions.py", "width": 10}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "__init__.py", "title": "import_count: 1", "to": "requests.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "__init__.py", "title": "import_count: 1", "to": "responses.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "__init__.py", "title": "import_count: 1", "to": "routing.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "__init__.py", "title": "import_count: 2", "to": "websockets.py", "width": 4.0}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "security/__init__.py", "title": "import_count: 3", "to": "security/api_key.py", "width": 5.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "security/__init__.py", "title": "import_count: 5", "to": "security/http.py", "width": 8.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "security/__init__.py", "title": "import_count: 6", "to": "security/oauth2.py", "width": 10.0}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "security/__init__.py", "title": "import_count: 1", "to": "security/open_id_connect_url.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "telemetry/__init__.py", "title": "import_count: 3", "to": "telemetry/_api.py", "width": 5.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "_compat/shared.py", "title": "import_count: 1", "to": "types.py", "width": 2.5}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "_compat/__init__.py", "title": "import_count: 13", "to": "_compat/shared.py", "width": 10}, {"arrows": "to", "color": {"color": "#888888", "highlight": "#ffcc00"}, "from": "_compat/__init__.py", "title": "import_count: 17", "to": "_compat/v2.py", "width": 10}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"forceAtlas2Based": {"gravitationalConstant": -60, "centralGravity": 0.01, "springLength": 120, "springConstant": 0.08, "damping": 0.4, "avoidOverlap": 0.5}, "solver": "forceAtlas2Based", "stabilization": {"enabled": true, "iterations": 300}, "minVelocity": 0.75}, "interaction": {"hover": true, "zoomView": true, "dragView": true, "selectable": true, "tooltipDelay": 150}, "edges": {"smooth": {"type": "continuous"}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    
+<div style="position:fixed; top:0; left:0; right:0; z-index:1000;
+            background:#2b2b2b; color:#f0f0f0; padding:10px 18px;
+            font-family:sans-serif; display:flex; align-items:center;
+            justify-content:space-between; border-bottom:1px solid #444;
+            box-shadow:0 2px 6px rgba(0,0,0,0.4);">
+  <div>
+    <div style="font-size:17px; font-weight:bold;">DepViz</div>
+    <div style="font-size:12px; color:#aaaaaa;">Interactive Software Dependency Visualization</div>
+  </div>
+  <div style="display:flex; gap:18px; font-size:13px;">
+    <div><span style="color:#aaaaaa;">Nodes:</span> 52</div>
+    <div><span style="color:#aaaaaa;">Edges:</span> 25</div>
+    <div><span style="color:#aaaaaa;">Isolated:</span> 28</div>
+    <div><span style="color:#aaaaaa;">Pendant:</span> 13</div>
+    <div><span style="color:#aaaaaa;">DAG:</span> Yes</div>
+    <div><span style="color:#aaaaaa;">Cycles:</span> 0</div>
+  </div>
+</div>
+
+<div style="position:fixed; top:66px; left:14px; z-index:1000;
+            background:#2b2b2b; color:#f0f0f0; padding:8px 10px;
+            border-radius:8px; font-family:sans-serif; font-size:13px;
+            box-shadow:0 2px 6px rgba(0,0,0,0.4);">
+  <input id="depviz-search" type="text" placeholder="Search filename or path..."
+         style="padding:4px 8px; width:200px; border-radius:4px; border:none;">
+  <button id="depviz-search-btn" style="padding:4px 10px; margin-left:4px;
+          border-radius:4px; border:none; cursor:pointer;">Find</button>
+  <div id="depviz-search-result" style="margin-top:6px; font-size:12px; color:#cccccc;"></div>
+</div>
+
+<div style="position:fixed; bottom:12px; right:12px; z-index:1000;
+            background:#2b2b2b; color:#f0f0f0; padding:10px 14px;
+            border-radius:8px; font-family:sans-serif; font-size:12px; line-height:1.6;
+            box-shadow:0 2px 6px rgba(0,0,0,0.4); max-width:260px;">
+  <strong>Legend</strong><br>
+  Node size = in-degree (how many files depend on it)<br>
+  Node color = folder/package<br>
+  Edge direction (arrow) = dependency direction (A &rarr; B means A depends on B)<br>
+  Edge thickness = import_count (coupling strength)
+</div>
+
+<script type="text/javascript">
+  (function () {
+    function runSearch() {
+      var query = document.getElementById('depviz-search').value.trim().toLowerCase();
+      var resultBox = document.getElementById('depviz-search-result');
+      if (!query) {
+        resultBox.innerText = "";
+        return;
+      }
+
+      var allNodes = nodes.get();
+      var matches = allNodes.filter(function (n) {
+        var label = (n.label || "").toLowerCase();
+        var title = (n.title || "").toLowerCase();
+        return label.indexOf(query) !== -1 || title.indexOf(query) !== -1;
+      });
+
+      if (matches.length === 0) {
+        resultBox.innerText = "No match found.";
+        return;
+      }
+
+      var matchIds = matches.map(function (n) { return n.id; });
+      network.selectNodes(matchIds);
+      network.focus(matchIds[0], { scale: 1.5, animation: true });
+      resultBox.innerText = matches.length + " match(es) found and selected.";
+    }
+
+    document.getElementById('depviz-search-btn').addEventListener('click', runSearch);
+    document.getElementById('depviz-search').addEventListener('keyup', function (e) {
+      if (e.key === 'Enter') runSearch();
+    });
+  })();
+</script>
+
+</body>
+</html>

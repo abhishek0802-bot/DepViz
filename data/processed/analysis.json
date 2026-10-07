@@ -1,0 +1,527 @@
+{
+  "metadata": {
+    "source_metadata": {
+      "repository_path": "D:\\DepViz\\data\\raw\\fastapi\\fastapi",
+      "python_file_count": 52,
+      "node_count": 52,
+      "edge_count": 25
+    },
+    "analyzed_node_count": 52,
+    "analyzed_edge_count": 25
+  },
+  "degree_analysis": {
+    "total_nodes": 52,
+    "total_edges": 25,
+    "isolated_node_count": 28,
+    "isolated_nodes": [
+      {
+        "id": "cli.py",
+        "filename": "cli.py",
+        "folder": ""
+      },
+      {
+        "id": "concurrency.py",
+        "filename": "concurrency.py",
+        "folder": ""
+      },
+      {
+        "id": "exception_handlers.py",
+        "filename": "exception_handlers.py",
+        "folder": ""
+      },
+      {
+        "id": "logger.py",
+        "filename": "logger.py",
+        "folder": ""
+      },
+      {
+        "id": "sse.py",
+        "filename": "sse.py",
+        "folder": ""
+      },
+      {
+        "id": "staticfiles.py",
+        "filename": "staticfiles.py",
+        "folder": ""
+      },
+      {
+        "id": "templating.py",
+        "filename": "templating.py",
+        "folder": ""
+      },
+      {
+        "id": "testclient.py",
+        "filename": "testclient.py",
+        "folder": ""
+      },
+      {
+        "id": "__main__.py",
+        "filename": "__main__.py",
+        "folder": ""
+      },
+      {
+        "id": "dependencies/models.py",
+        "filename": "models.py",
+        "folder": "dependencies"
+      },
+      {
+        "id": "dependencies/utils.py",
+        "filename": "utils.py",
+        "folder": "dependencies"
+      },
+      {
+        "id": "dependencies/__init__.py",
+        "filename": "__init__.py",
+        "folder": "dependencies"
+      },
+      {
+        "id": "middleware/asyncexitstack.py",
+        "filename": "asyncexitstack.py",
+        "folder": "middleware"
+      },
+      {
+        "id": "middleware/cors.py",
+        "filename": "cors.py",
+        "folder": "middleware"
+      },
+      {
+        "id": "middleware/gzip.py",
+        "filename": "gzip.py",
+        "folder": "middleware"
+      },
+      {
+        "id": "middleware/httpsredirect.py",
+        "filename": "httpsredirect.py",
+        "folder": "middleware"
+      },
+      {
+        "id": "middleware/trustedhost.py",
+        "filename": "trustedhost.py",
+        "folder": "middleware"
+      },
+      {
+        "id": "middleware/wsgi.py",
+        "filename": "wsgi.py",
+        "folder": "middleware"
+      },
+      {
+        "id": "middleware/__init__.py",
+        "filename": "__init__.py",
+        "folder": "middleware"
+      },
+      {
+        "id": "openapi/constants.py",
+        "filename": "constants.py",
+        "folder": "openapi"
+      },
+      {
+        "id": "openapi/docs.py",
+        "filename": "docs.py",
+        "folder": "openapi"
+      },
+      {
+        "id": "openapi/models.py",
+        "filename": "models.py",
+        "folder": "openapi"
+      },
+      {
+        "id": "openapi/utils.py",
+        "filename": "utils.py",
+        "folder": "openapi"
+      },
+      {
+        "id": "openapi/__init__.py",
+        "filename": "__init__.py",
+        "folder": "openapi"
+      },
+      {
+        "id": "security/base.py",
+        "filename": "base.py",
+        "folder": "security"
+      },
+      {
+        "id": "security/utils.py",
+        "filename": "utils.py",
+        "folder": "security"
+      },
+      {
+        "id": "telemetry/_asgi.py",
+        "filename": "_asgi.py",
+        "folder": "telemetry"
+      },
+      {
+        "id": "telemetry/_runtime.py",
+        "filename": "_runtime.py",
+        "folder": "telemetry"
+      }
+    ],
+    "pendant_node_count": 13,
+    "pendant_nodes": [
+      {
+        "id": "applications.py",
+        "filename": "applications.py",
+        "folder": ""
+      },
+      {
+        "id": "background.py",
+        "filename": "background.py",
+        "folder": ""
+      },
+      {
+        "id": "exceptions.py",
+        "filename": "exceptions.py",
+        "folder": ""
+      },
+      {
+        "id": "param_functions.py",
+        "filename": "param_functions.py",
+        "folder": ""
+      },
+      {
+        "id": "requests.py",
+        "filename": "requests.py",
+        "folder": ""
+      },
+      {
+        "id": "responses.py",
+        "filename": "responses.py",
+        "folder": ""
+      },
+      {
+        "id": "websockets.py",
+        "filename": "websockets.py",
+        "folder": ""
+      },
+      {
+        "id": "security/api_key.py",
+        "filename": "api_key.py",
+        "folder": "security"
+      },
+      {
+        "id": "security/http.py",
+        "filename": "http.py",
+        "folder": "security"
+      },
+      {
+        "id": "security/oauth2.py",
+        "filename": "oauth2.py",
+        "folder": "security"
+      },
+      {
+        "id": "security/open_id_connect_url.py",
+        "filename": "open_id_connect_url.py",
+        "folder": "security"
+      },
+      {
+        "id": "telemetry/_api.py",
+        "filename": "_api.py",
+        "folder": "telemetry"
+      },
+      {
+        "id": "telemetry/__init__.py",
+        "filename": "__init__.py",
+        "folder": "telemetry"
+      }
+    ],
+    "max_in_degree": 3,
+    "max_in_degree_nodes": [
+      {
+        "id": "types.py",
+        "filename": "types.py",
+        "folder": ""
+      },
+      {
+        "id": "_compat/__init__.py",
+        "filename": "__init__.py",
+        "folder": "_compat"
+      }
+    ],
+    "max_out_degree": 9,
+    "max_out_degree_nodes": [
+      {
+        "id": "__init__.py",
+        "filename": "__init__.py",
+        "folder": ""
+      }
+    ],
+    "average_in_degree": 0.4808,
+    "average_out_degree": 0.4808,
+    "in_degree_distribution": {
+      "1": 13,
+      "0": 34,
+      "2": 3,
+      "3": 2
+    },
+    "out_degree_distribution": {
+      "0": 42,
+      "1": 4,
+      "2": 4,
+      "9": 1,
+      "4": 1
+    },
+    "top_10_by_in_degree": [
+      {
+        "id": "types.py",
+        "filename": "types.py",
+        "folder": "",
+        "in_degree": 3
+      },
+      {
+        "id": "_compat/__init__.py",
+        "filename": "__init__.py",
+        "folder": "_compat",
+        "in_degree": 3
+      },
+      {
+        "id": "datastructures.py",
+        "filename": "datastructures.py",
+        "folder": "",
+        "in_degree": 2
+      },
+      {
+        "id": "routing.py",
+        "filename": "routing.py",
+        "folder": "",
+        "in_degree": 2
+      },
+      {
+        "id": "_compat/v2.py",
+        "filename": "v2.py",
+        "folder": "_compat",
+        "in_degree": 2
+      },
+      {
+        "id": "applications.py",
+        "filename": "applications.py",
+        "folder": "",
+        "in_degree": 1
+      },
+      {
+        "id": "background.py",
+        "filename": "background.py",
+        "folder": "",
+        "in_degree": 1
+      },
+      {
+        "id": "exceptions.py",
+        "filename": "exceptions.py",
+        "folder": "",
+        "in_degree": 1
+      },
+      {
+        "id": "param_functions.py",
+        "filename": "param_functions.py",
+        "folder": "",
+        "in_degree": 1
+      },
+      {
+        "id": "requests.py",
+        "filename": "requests.py",
+        "folder": "",
+        "in_degree": 1
+      }
+    ],
+    "top_10_by_out_degree": [
+      {
+        "id": "__init__.py",
+        "filename": "__init__.py",
+        "folder": "",
+        "out_degree": 9
+      },
+      {
+        "id": "security/__init__.py",
+        "filename": "__init__.py",
+        "folder": "security",
+        "out_degree": 4
+      },
+      {
+        "id": "encoders.py",
+        "filename": "encoders.py",
+        "folder": "",
+        "out_degree": 2
+      },
+      {
+        "id": "params.py",
+        "filename": "params.py",
+        "folder": "",
+        "out_degree": 2
+      },
+      {
+        "id": "utils.py",
+        "filename": "utils.py",
+        "folder": "",
+        "out_degree": 2
+      },
+      {
+        "id": "_compat/__init__.py",
+        "filename": "__init__.py",
+        "folder": "_compat",
+        "out_degree": 2
+      },
+      {
+        "id": "datastructures.py",
+        "filename": "datastructures.py",
+        "folder": "",
+        "out_degree": 1
+      },
+      {
+        "id": "routing.py",
+        "filename": "routing.py",
+        "folder": "",
+        "out_degree": 1
+      },
+      {
+        "id": "telemetry/__init__.py",
+        "filename": "__init__.py",
+        "folder": "telemetry",
+        "out_degree": 1
+      },
+      {
+        "id": "_compat/shared.py",
+        "filename": "shared.py",
+        "folder": "_compat",
+        "out_degree": 1
+      }
+    ]
+  },
+  "cycle_analysis": {
+    "is_dag": true,
+    "cycle_count": 0,
+    "cycles": []
+  },
+  "coupling_analysis": {
+    "max_import_count": 17,
+    "top_10_strongest_edges": [
+      {
+        "source": {
+          "id": "_compat/__init__.py",
+          "filename": "__init__.py",
+          "folder": "_compat"
+        },
+        "target": {
+          "id": "_compat/v2.py",
+          "filename": "v2.py",
+          "folder": "_compat"
+        },
+        "import_count": 17
+      },
+      {
+        "source": {
+          "id": "_compat/__init__.py",
+          "filename": "__init__.py",
+          "folder": "_compat"
+        },
+        "target": {
+          "id": "_compat/shared.py",
+          "filename": "shared.py",
+          "folder": "_compat"
+        },
+        "import_count": 13
+      },
+      {
+        "source": {
+          "id": "__init__.py",
+          "filename": "__init__.py",
+          "folder": ""
+        },
+        "target": {
+          "id": "param_functions.py",
+          "filename": "param_functions.py",
+          "folder": ""
+        },
+        "import_count": 9
+      },
+      {
+        "source": {
+          "id": "security/__init__.py",
+          "filename": "__init__.py",
+          "folder": "security"
+        },
+        "target": {
+          "id": "security/oauth2.py",
+          "filename": "oauth2.py",
+          "folder": "security"
+        },
+        "import_count": 6
+      },
+      {
+        "source": {
+          "id": "security/__init__.py",
+          "filename": "__init__.py",
+          "folder": "security"
+        },
+        "target": {
+          "id": "security/http.py",
+          "filename": "http.py",
+          "folder": "security"
+        },
+        "import_count": 5
+      },
+      {
+        "source": {
+          "id": "security/__init__.py",
+          "filename": "__init__.py",
+          "folder": "security"
+        },
+        "target": {
+          "id": "security/api_key.py",
+          "filename": "api_key.py",
+          "folder": "security"
+        },
+        "import_count": 3
+      },
+      {
+        "source": {
+          "id": "telemetry/__init__.py",
+          "filename": "__init__.py",
+          "folder": "telemetry"
+        },
+        "target": {
+          "id": "telemetry/_api.py",
+          "filename": "_api.py",
+          "folder": "telemetry"
+        },
+        "import_count": 3
+      },
+      {
+        "source": {
+          "id": "encoders.py",
+          "filename": "encoders.py",
+          "folder": ""
+        },
+        "target": {
+          "id": "_compat/__init__.py",
+          "filename": "__init__.py",
+          "folder": "_compat"
+        },
+        "import_count": 2
+      },
+      {
+        "source": {
+          "id": "__init__.py",
+          "filename": "__init__.py",
+          "folder": ""
+        },
+        "target": {
+          "id": "exceptions.py",
+          "filename": "exceptions.py",
+          "folder": ""
+        },
+        "import_count": 2
+      },
+      {
+        "source": {
+          "id": "__init__.py",
+          "filename": "__init__.py",
+          "folder": ""
+        },
+        "target": {
+          "id": "websockets.py",
+          "filename": "websockets.py",
+          "folder": ""
+        },
+        "import_count": 2
+      }
+    ]
+  }
+}
